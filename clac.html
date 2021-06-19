@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+	*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.main{
+	margin-top: 60px;
+	padding: 20px;
+	text-align: center;
+	background: rgb(100,100,100);
+	width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #fff; 
+	border-radius: 30px;
+	box-shadow: 10px 10px 20px #aaa, 9px 0px rgba(0,0,0,0.15);
+}
+.up{
+	margin-left: auto;
+	margin-right: auto;
+}
+#demo{
+	width: 360px;
+	height: 60px;
+	background: lightgreen;
+	font-size: 40px;
+	border: none;
+	border-radius: 20px;
+	text-align: right;
+}
+.down{
+	margin-top: 20px;
+}
+.number, .operation, .equal{
+	font-size: 45px;
+	font-weight: bold;
+	padding: 5px;
+	margin: 5px;
+	height: 70px;
+	width: 70px;
+	border-radius: 25%;
+	border: none;
+	box-shadow: 4px 4px 4px black;
+	text-align: center; 
+	cursor: pointer;
+}
+.back{
+	width: 360px;
+	font-size: 30px;
+	color: #fff;
+	padding: 5px;
+	margin-bottom: 10px;
+	border-radius: 20px;
+	background: grey;
+}
+.number, .operation{
+	background: white;
+}
+.equal{
+	background: rgb(255,80,0);
+	color: white;
+}
+</style>	
+</head>
+<body>
+	<div class="main">
+		<div class="up">
+		<input id="demo">
+		</div>
+		<div class="down">
+			<button class="back" onclick="back()">Clear</button><br>
+			<button onclick="myFunction('7')" class="number">7</button>
+			<button onclick="myFunction('8')" class="number">8</button>
+			<button onclick="myFunction('9')" class="number">9</button>
+			<button onclick="myFunction('/')" class="operation">/</button><br>
+			<button onclick="myFunction('4')" class="number">4</button>
+			<button onclick="myFunction('5')" class="number">5</button>
+			<button onclick="myFunction('6')" class="number">6</button>
+			<button onclick="myFunction('*')" class="operation">*</button><br>
+			<button onclick="myFunction('1')" class="number">1</button>
+			<button onclick="myFunction('2')" class="number">2</button>
+			<button onclick="myFunction('3')" class="number">3</button>
+			<button onclick="myFunction('-')" class="operation">-</button><br>
+			<button onclick="myFunction('0')" class="number">0</button>
+			<button onclick="myFunction('.')"class="number">.</button>
+			<button onclick="myFunction('+')" class="operation">+</button>
+			<button class="equal" onclick="solve()">=</button>
+		</div>
+	</div>
+<script type="text/javascript">
+	function myFunction(x) { 
+		document.getElementById("demo").value+= x;
+	}
+	function solve() {
+		var y = document.getElementById("demo").value;
+		var z = eval(y);
+		document.getElementById("demo").value = z; 
+	}
+	function back() {
+		document.getElementById("demo").value = "";
+	}
+</script>	
+</body>
+</html>
